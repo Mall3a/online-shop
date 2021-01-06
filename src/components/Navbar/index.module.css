@@ -1,0 +1,20 @@
+:local(.navbar){
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 10vh;
+    background-color: rgb(61, 70, 70);
+    color: white;
+}
+
+:local(.navLinks){
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+}
+
+:local(.link){
+    color: white;
+}

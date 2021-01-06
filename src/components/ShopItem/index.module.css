@@ -1,0 +1,50 @@
+
+:local(.card){
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid rgba(0,0,0,.125);
+    margin: 10px;
+    padding: 10px;
+    width: 250px;
+}
+
+:local(.cardImage){
+    height: 320px;
+}
+
+:local(.cardTitle){
+    font-size: 18px;
+    max-width: 200px;
+    text-align: center;
+    font-weight: bold;
+    color: black;
+    padding: 10px;
+}
+
+:local(.cardTitle:hover){
+    color: blue;
+}
+
+
+:local(.link:link){
+    text-decoration: none;
+}
+
+:local(.link:visited){
+    text-decoration: none;
+}
+
+:local(.link:hover){
+    text-decoration: none;
+}
+
+:local(.link:active){
+    text-decoration: none;
+}
+
+
+
+:local(.cardText){
+
+}
