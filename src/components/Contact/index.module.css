@@ -1,0 +1,57 @@
+
+:local(.insideContainer){
+    background-color: darkblue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    width: 50%;
+    border-radius:10px;
+    margin-top: 30px;
+    color: white;
+}
+
+:local(.header){
+    text-align: center;
+    border-radius: 10px;
+    background-color: black;
+    width: 100%;
+}
+
+:local(.body){
+    margin: 30px;
+    padding: 10px;
+    
+}
+:local(.body div){
+    display: grid;
+    grid-template-columns: repeat(2, 200px);
+    padding: 10px;
+}
+:local(.body label){
+    text-align: end;
+    margin-right: 30%;
+}
+:local(.body textarea) {
+    resize: none;
+  }
+
+ 
+@media (max-width: 900px) {
+
+    :local(.body label){
+        text-align: end;
+        margin-right: 10%;
+    }
+
+    :local(.body textarea) {
+        width: 100px;
+    }
+    
+    :local(.body input) {
+        width: 100px;
+    }
+    :local(.body button) {
+        width: 100px;
+    }
+  }
