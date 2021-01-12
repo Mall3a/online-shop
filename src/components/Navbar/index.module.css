@@ -2,9 +2,15 @@
     display:flex;
     justify-content: space-around;
     align-items: center;
-    min-height: 10vh;
-    background-color: rgb(61, 70, 70);
+    height: 10vh;
+    background-color: rgb(59, 64, 105);
     color: white;
+    position: relative;
+}
+
+:local(.logo){
+    width: 25%;
+    height: auto;
 }
 
 :local(.navLinks){
@@ -17,4 +23,20 @@
 
 :local(.link){
     color: white;
+    text-decoration: none;
+}
+
+:local(.link:hover){
+    background-color: white;
+    color: black;
+    padding: 30px;
+    
+    
+}
+
+@supports (position:sticky){
+:local(.navbar){
+    position: sticky;
+    top:0;
+}
 }
