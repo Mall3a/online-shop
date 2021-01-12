@@ -1,9 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import styles from './index.module.css'
 
 const Home = props => {
     return (
-        <div>
+        <div className={styles.container}>
             <h1>Home Page</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer placerat justo at quam lacinia aliquam. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis facilisis odio et justo venenatis lacinia. Aenean justo ex, hendrerit vel felis convallis, egestas ullamcorper erat. Vivamus at pretium neque, nec convallis purus. Sed iaculis gravida justo, vel lacinia felis vehicula ac. Vestibulum dictum lacinia metus sed commodo. Nulla sed dapibus tellus.
 
