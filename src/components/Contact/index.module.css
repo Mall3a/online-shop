@@ -1,5 +1,5 @@
 
-:local(.insideContainer){
+:local(.container){
     background-color: rgb(59, 64, 105);;
     display: flex;
     flex-direction: column;

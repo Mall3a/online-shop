@@ -24,14 +24,12 @@
 :local(.link){
     color: white;
     text-decoration: none;
+    padding: 30px;
 }
 
 :local(.link:hover){
     background-color: white;
     color: black;
-    padding: 30px;
-    
-    
 }
 
 @supports (position:sticky){

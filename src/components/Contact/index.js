@@ -26,7 +26,7 @@ const Contact = props => {
 
     return (
 
-        <form onSubmit={handleOnSubmit} className={styles.insideContainer}>
+        <form onSubmit={handleOnSubmit} className={styles.container}>
             <div className={styles.header}>
                 <h1>Contact Us</h1>
                 <p>Feel free to drop us a line below!</p>
