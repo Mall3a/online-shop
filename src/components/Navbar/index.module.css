@@ -6,9 +6,15 @@
     /* display:flex;
     justify-content: space-around;
     align-items: center;
-    min-height: 10vh;
+    height: 10vh;
+    background-color: rgb(59, 64, 105);
+    color: white;
+    position: relative;
+}
 
-    color: white; */
+:local(.logo){
+    width: 25%;
+    height: auto;
 }
 
 :local(.navLinks){
@@ -27,26 +33,18 @@
   
     text-decoration: none;
     color: white;
-    font-size: 20px;
-    padding: 15px;
-
-}
-
-:local(.link:link){
     text-decoration: none;
-}
-
-:local(.link:visited){
-    text-decoration: none;
+    padding: 30px;
 }
 
 :local(.link:hover){
-    color: darkblue;
-    font-weight: bold;
     background-color: white;
-    text-decoration: none;
+    color: black;
 }
 
-:local(.link:active){
-    text-decoration: none;
+@supports (position:sticky){
+:local(.navbar){
+    position: sticky;
+    top:0;
+}
 }
