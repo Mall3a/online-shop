@@ -6,20 +6,28 @@ import styles from './index.module.css';
 
 const Navbar = props => {
     return (
-        <nav className={styles.navbar}>
+        <div className={styles.navbarContainer}>
+            <nav className={styles.navbar}>
             <h3>Logo</h3>
             <ul className={styles.navLinks}>
-                <Link className={styles.link} to="/shop">
-                    <li>Shop</li>
-                </Link>
-                <Link className={styles.link} to="/about">
-                    <li>About</li>
-                </Link>
-                <Link className={styles.link} to="/contact">
-                    <li>Contact</li>
-                </Link>
+                <li>
+                    <Link className={styles.link} to="/shop">
+                        Shop 
+                    </Link>
+                </li>
+                <li>
+                    <Link className={styles.link} to="/about">
+                        About
+                    </Link>
+                </li>
+                <li>
+                    <Link className={styles.link} to="/contact">
+                        Contact
+                    </Link>
+                </li>
             </ul>
         </nav>
+        </div>
     )
 }
 
