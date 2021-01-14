@@ -5,8 +5,8 @@ const defaultParams = {
     apikey: APIKEY,
 };
 
-export const getMoviesByName = async (name) => {
-    const response = await axios.get(`${BASE_URL}?&s=${name}`,{
+export const getMoviesBySearch = async (s) => {
+    const response = await axios.get(`${BASE_URL}?&s=${s}`,{
         method: 'GET',
         params: {
           ...defaultParams,
@@ -16,16 +16,14 @@ export const getMoviesByName = async (name) => {
 }
 
 
-export const getMovieDetailById = (id) => {
-    axios.get(`${BASE_URL}?&t=${id}`,{
+export const getMovieDetailByTitle = async (name) => {
+  const response = await axios.get(`${BASE_URL}?&t=${name}`,{
         method: 'GET',
         params: {
           ...defaultParams,
         },
-      }).then(response => response.data)
-      .catch(e => {
-        console.log(e);
-    })
+      })
+  return response.data;
 }
 
 

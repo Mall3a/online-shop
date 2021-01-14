@@ -1,21 +1,32 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import useFetch from '../../hooks/useFetch';
 import styles from './index.module.css'
 import noImage from '../../images/NO-IMAGE.png'
 import { decrement, increment } from '../../actions';
 import { useSelector, useDispatch } from 'react-redux';
+import { getMovieDetailByTitle } from '../../api/endpoints/movies'
 
 const ItemDetail = ({
     match
 }) => {
 
     const { params } = match;
-    //const {loading, error, data} = useFetch(`${baseURL}?apikey=${apiKey}&t=${params.id}`);
-    const data = null;
+    
+    const [data, setData] = useState(null);
     const { Title, Year, Poster, Country, Director, Language } = data != null && data;
 
+    useEffect(() => {
+        getMovieDetailByTitle(params.id)
+        .then(resp => {
+            setData(resp);
+        })
+        .catch(e => {
+            console.log(e);
+        })
+    }, []);
 
+    //Redux
     const counter = useSelector(state => state.counterReducer);
     const dispatch = useDispatch();
 
@@ -26,7 +37,6 @@ const ItemDetail = ({
     const handleDecrement = () => {
         dispatch(decrement());
     }
-
 
     return (
        <div>

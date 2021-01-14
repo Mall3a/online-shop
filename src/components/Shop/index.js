@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import useFetch from '../../hooks/useFetch'
 import ShopItem from '../ShopItem'
 import styles from './index.module.css'
-import { getMoviesByName } from '../../api/endpoints/movies';
+import { getMoviesBySearch } from '../../api/endpoints/movies';
 
 const Shop = () => {
    
@@ -22,7 +22,7 @@ const Shop = () => {
             data: null
         })
         
-        const response = await getMoviesByName(searchValue);
+        const response = await getMoviesBySearch(searchValue);
         
         if(response.Response === "False"){
             setState({
@@ -37,8 +37,6 @@ const Shop = () => {
                 error: null
             })
         }
-
-        console.log(response)
     }
 
     const handleOnSubmit =  (e) => {
@@ -50,9 +48,7 @@ const Shop = () => {
     return (
         <div>
             <h1 className={styles.shopPageTitle}>Shop Page</h1>
-
            <div className={styles.container}>
-
                 <form onSubmit={handleOnSubmit} className={styles.filterOptions}>
                     <label>Buscar Película</label>
                     <input type="text" value={searchValue} onChange={e=>setSearchValue(e.target.value)}></input>
@@ -66,10 +62,7 @@ const Shop = () => {
                         {items.map(item => <ShopItem key={item.imdbID} {...item} />)}
                     </div>)}
                 </div>
-                
            </div>
-            
-
         </div>
     )
 }
