@@ -2,6 +2,19 @@
     text-align: center;
 }
 
+:local(.container){
+    display: flex;
+    flex-direction: row;
+}
+:local(.filterOptions){
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+}
+
+:local(.results){
+    margin: 20px;
+}
 :local(.shopItems){
     display: flex;
     flex-wrap: wrap;

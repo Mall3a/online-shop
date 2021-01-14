@@ -6,14 +6,14 @@
      display:flex;
     justify-content: space-around;
     align-items: center;
-    height: 10vh;
+    height: 15vh;
     background-color: rgb(59, 64, 105);
     color: white;
     position: relative;
 }
 
 :local(.logo){
-    width: 25%;
+    width: 10%;
     height: auto;
 }
 

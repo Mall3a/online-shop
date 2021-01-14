@@ -10,7 +10,8 @@
 }
 
 :local(.cardImage){
-    height: 320px;
+    
+    width: 230px;
 }
 
 :local(.cardTitle){
