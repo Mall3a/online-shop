@@ -7,6 +7,10 @@
     margin: 80px;
 }
 
+:local(.image){
+    width: 300px;
+}
+
 :local(.infoContainer){
     padding-left: 10px;
     padding-right: 10px;
@@ -15,6 +19,14 @@
     border: 1px solid rgba(0,0,0,.125);
 }
 
+:local(.infoList){
+    margin-left: 5px;
+    margin-top: 20px;
+    list-style: none;
+}
+:local(.infoList li){
+    margin-bottom: 10px;
+}
 :local(.title){
     font-size: 25px;
 }

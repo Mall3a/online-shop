@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import useFetch from '../../hooks/useFetch';
 import styles from './index.module.css'
-
+import noImage from '../../images/NO-IMAGE.png'
 import { decrement, increment } from '../../actions';
 import { useSelector, useDispatch } from 'react-redux';
 
@@ -16,6 +16,9 @@ const ItemDetail = ({
     const { params } = match;
     const {loading, error, data} = useFetch(`${baseURL}?apikey=${apiKey}&t=${params.id}`);
 
+    const { Title, Year, Poster, Country, Director, Language } = data != null && data;
+
+
     const counter = useSelector(state => state.counterReducer);
     const dispatch = useDispatch();
 
@@ -27,13 +30,21 @@ const ItemDetail = ({
         dispatch(decrement());
     }
 
+    console.log(data)
     return (
        <div>
             { data && (
                 <div className={styles.container}>
-                    <img src={data.Poster}></img>
+                    <img className={styles.image} src={Poster!="N/A"?data.Poster:noImage}></img>
                     <div className={styles.infoContainer}>
-                        <h1 className={styles.title}>{data.Title}</h1>
+                        <h1 className={styles.title}>{Title}</h1>
+                        
+                        <ul className={styles.infoList}>
+                            <li>{Year}</li>
+                            <li>{Country}</li>
+                            <li>{Director}</li>
+                            <li>{Language}</li>
+                        </ul>
                     </div>
                    
                 </div>
