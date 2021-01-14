@@ -3,12 +3,10 @@ import PropTypes from 'prop-types'
 import useFetch from '../../hooks/useFetch'
 import ShopItem from '../ShopItem'
 import styles from './index.module.css'
+import { getMoviesByName } from '../../api/endpoints/movies';
 
-
-const Shop = props => {
-
-    const apiKey = '5c6682b0';
-    const baseURL= 'http://www.omdbapi.com/';
+const Shop = () => {
+   
     const [searchValue, setSearchValue] = useState('');
     const [state, setState] = useState({
         data: null,
@@ -16,37 +14,36 @@ const Shop = props => {
         error: null
     });
     const items = state.data && state.data.Search;
-    
-    const searchItems = async () => {
-        setState({
-            data: null,
-            loading: true,
-            error: null
-        })
 
-        const resp = await fetch(`${baseURL}?apikey=${apiKey}&s=${searchValue}`);
-        const data = await resp.json();
-      
-        if(data.Response === "False"){
+    const getMovies = async () => {
+        setState({
+            loading: true,
+            error: null,
+            data: null
+        })
+        
+        const response = await getMoviesByName(searchValue);
+        
+        if(response.Response === "False"){
             setState({
                 loading: false,
-                error: data.Error,
+                error: response.Error,
                 data: null
             })
         }else{
             setState({
+                data: response,
                 loading: false,
-                error: null,
-                data
+                error: null
             })
         }
-      
-        
+
+        console.log(response)
     }
 
-    const handleOnSubmit = (e) => {
+    const handleOnSubmit =  (e) => {
         e.preventDefault();
-        searchItems();
+        getMovies();
         setSearchValue('');
     }
 

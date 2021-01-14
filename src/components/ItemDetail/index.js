@@ -10,12 +10,9 @@ const ItemDetail = ({
     match
 }) => {
 
-    const apiKey = '5c6682b0';
-    const baseURL= 'http://www.omdbapi.com/';
-
     const { params } = match;
-    const {loading, error, data} = useFetch(`${baseURL}?apikey=${apiKey}&t=${params.id}`);
-
+    //const {loading, error, data} = useFetch(`${baseURL}?apikey=${apiKey}&t=${params.id}`);
+    const data = null;
     const { Title, Year, Poster, Country, Director, Language } = data != null && data;
 
 
@@ -30,7 +27,7 @@ const ItemDetail = ({
         dispatch(decrement());
     }
 
-    console.log(data)
+
     return (
        <div>
             { data && (
